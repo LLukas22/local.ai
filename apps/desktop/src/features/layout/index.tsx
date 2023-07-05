@@ -1,5 +1,5 @@
-import { Button } from "@localai/ui/button"
-import { AppLayout } from "@localai/ui/layouts/app"
+import { Button } from "@lab/ui/button"
+import { AppLayout } from "@lab/ui/layouts/app"
 import { DotsHorizontalIcon, OpenInNewWindowIcon } from "@radix-ui/react-icons"
 import { open as dialogOpen } from "@tauri-apps/api/dialog"
 import { Home } from "iconoir-react"
@@ -7,6 +7,7 @@ import type { ReactNode } from "react"
 
 import { InvokeCommand, invoke } from "~features/invoke"
 import { NavButton } from "~features/layout/nav-button"
+import { ViewHeader } from "~features/layout/view"
 import { NewThreadButton } from "~features/thread/new-thread"
 import { ChatSideBar } from "~features/thread/side-bar"
 import { Route, useGlobal } from "~providers/global"
@@ -16,7 +17,7 @@ const TopBar = () => {
     threadsDirectoryState: { threadsDirectory, updateThreadsDirectory }
   } = useGlobal()
   return (
-    <div className="flex justify-center items-center w-full h-16 p-4 border-b border-b-gray-6">
+    <ViewHeader className="flex justify-center items-center p-4 border-b border-b-gray-6 gap-0">
       <NewThreadButton className="w-full rounded-r-none" />
       <Button
         title="Change threads directory"
@@ -44,7 +45,7 @@ const TopBar = () => {
         }}>
         <OpenInNewWindowIcon />
       </Button>
-    </div>
+    </ViewHeader>
   )
 }
 

@@ -1,5 +1,5 @@
-import { Button, SpinnerButton } from "@localai/ui/button"
-import { Input } from "@localai/ui/input"
+import { Button, SpinnerButton } from "@lab/ui/button"
+import { Input } from "@lab/ui/input"
 import {
   DotsHorizontalIcon,
   OpenInNewWindowIcon,
@@ -53,7 +53,7 @@ export function ModelManagerView() {
             />
           )}
           <Input
-            className="w-full lg:w-96 rounded-none border-gray-3"
+            className="w-full lg:w-72 rounded-none border-gray-3"
             value={modelsDirectory}
             readOnly
             placeholder="Models directory"
